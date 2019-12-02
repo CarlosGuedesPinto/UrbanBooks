@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BackOffice</title>
+
+    <!-- Custom js -->
+    <script src="../js/backOffice.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDUamczXkPbEf179BOrj3r-PUiwYqxQRg"></script>
+    <!--fazer base de dados marcadores-->
+
+    <style>
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        #container {
+            transition: margin-left .5s;
+            padding: 16px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+
+        body {
+            font-family: Slim Joe;
+            font-weight: bold;
+
+        }
+
+        #left {
+            width: 45%;
+            height: 0px;
+            float: left;
+            border-right: 3px solid black;
+        }
+
+        #right {
+            /*ver posicao*/
+            margin-left: 45%;
+            height: 200px;
+            border-color: black;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" id="fecharNav">&times;</a>
+        <a href="#" id="butBiblio">Bibliotecas</a>
+        <a href="#" id="butCategorias">Categorias</a>
+        <a href="#" id="butTags">Tags</a>
+        <a href="#">Utilizadores</a>
+        <ul class="nav collapse" id="subMenuUti" role="menu" aria-labelledby="btn-1">
+            <li>
+                <a href="#" id="addUti">Adicionar Utilizadores</a>
+            </li>
+            <li>
+                <a href="#" id="editUti">Editar Utilizadores</a>
+            </li>
+            <li>
+                <a href="#" id="remUti">Remover Utilizadores</a>
+            </li>
+        </ul>
+        <a href="#" id="butLivros">Livros</a>
+        <a href="#" id="butRequisicoes">Requisicoes</a>
+        <a href="#" id="butMarkers">Markers</a>
+    </div>
+
+    <div id="container">
+
+        <span id="abrirNav" style="font-size:30px;cursor:pointer">&#9776;</span>
+        <h1>BACKOFFICE -> URBAN BOOKS PROJECT</h1>
+        <hr>
+
+        <div id="bibliotecas" style="display:  none">
+            <div id="left">
+                <h1>ADICIONAR BIBLIOTECA</h1>
+
+                <form id="addBiblio">
+                    <br> Freguesia
+                    <br>
+                    <input id="freguesiaBiblioteca" type="text" name="freguesia" value="Sermonde" required>
+                    <br> Morada
+                    <br>
+                    <input id="moradaBiblioteca" type="text" name="morada" value="Praceta" required>
+                    <br> Rua
+                    <br>
+                    <input id="coordBiblioteca" type="text" name="adress" required>
+                    <div id="map" style="width:250px;height:250px"></div>
+                    <button type="button" id="butRemMark">Remover Marcadores</button>
+                    <br> Capacidade
+                    <br>
+                    <input id="capacidadeBiblioteca" type="number" name="capacidade" value="1000" required>
+
+                    <input type="submit" value="Submit">
+
+                </form>
+
+            </div>
+
+            <div id="right">
+
+                <div id="tblBiblio">
+
+                    <table id="tabelaBiblio" style="width: 100%">
+
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div id="categorias" style="display: none">
+            <div id="left">
+
+                <h1>ADICIONAR CATEGORIAS</h1>
+                <form id="addCat">
+
+                    <br> Nova Categoria
+                    <br>
+                    <input id="novaCategoria" type="text" name="categoria" value="Aventura" required>
+
+                    <input type="submit" value="Submit">
+
+                </form>
+            </div>
+            <div id="right">
+                <div id="tblCat">
+
+                    <table id="tabelaCat" style="width: 100%">
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="tags" style="display: none">
+            <div id="left">
+
+
+                <h1>ADICIONAR TAGS</h1>
+                <form id="addTag">
+
+                    <br> Nova Tag
+                    <br>
+                    <input id="novaTag" type="text" name="tag" value="#" required>
+
+                    <input type="submit" value="Submit">
+
+                </form>
+            </div>
+            <div id="right">
+                <div id="tblTag">
+
+                    <table id="tabelaTag" style="width: 100%">
+
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <!--Adicionar Utilizador-->
+        <div id="formAddUti" style="display: none">
+            <div id="left">
+
+
+                <h1>ADICIONAR UTILIZADORES</h1>
+                <form id="addUtilizador">
+
+                    <br> Nome
+                    <br>
+                    <input id="utiNome" type="text" name="nome" value="Carlos" required>
+                    <br> Tipo de Utilizador
+                    <br>
+                    <label>
+                        <input id="utiTipoAdmin" type="checkbox" name="admin" value="0">ADMIN</label>
+                    <label>
+                        <input id="utiTipoOper" type="checkbox" name="oper" value="1">OPER</label>
+                    <label>
+                        <input id="utiTipoUser" type="checkbox" name="user" value="2">USER</label>
+                    <br> Email
+                    <br>
+                    <input id="utiEmail" type="email" name="email" value="carlos@carlos.pt" required>
+                    <br> Password
+                    <br>
+                    <input id="utiPassword" type="password" name="pass" value="123" required>
+                    <br> Tags
+                    <br>
+                    <input id="utiTags" type="text" name="tags" value="">
+                    <br> Multa
+                    <br>
+                    <input id="utiMulta" type="number" name="multa" value="0" required>
+                    <br> Foto (link)
+                    <br>
+                    <input id="utiFoto" type="text" name="foto" value="\imagens\ola.png" required>
+                    <br> <label id="idBiblioLabel" style="display: none"> Id Biblioteca </label>
+                    <br>
+                    <input style="display: none" id="operBiblio" type="number" name="idB" value="1" required>
+
+                    <input type="submit" value="Submit">
+
+                </form>
+            </div>
+            <div id="right">
+                <div id="tblAddUti">
+
+                    <table id="tabelaAddUti" style="width: 100%">
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+        <!--Editar Utilizador-->
+        <div id="formEditUti" style="display: none">
+            <div id="left">
+
+
+                <h1>EDITAR UTILIZADORES</h1>
+                <form id="editUtilizador">
+
+                    <br> Nome
+                    <br>
+                    <input id="utiNome1" type="text" name="nome" value="" required>
+                    <br> Tipo de Utilizador
+                    <br>
+                    <label>
+                        <input id="utiTipoAdmin1" type="checkbox" name="admin" value="0">ADMIN</label>
+                    <label>
+                        <input id="utiTipoOper1" type="checkbox" name="oper" value="1">OPER</label>
+                    <label>
+                        <input id="utiTipoUser1" type="checkbox" name="user" value="2">USER</label>
+                    <br> Email
+                    <br>
+                    <input id="utiEmail1" type="email" name="email" value="" required>
+                    <br> Password
+                    <br>
+                    <input id="utiPassword1" type="password" name="pass" value="" required>
+                    <br> Tags
+                    <br>
+                    <input id="utiTags1" type="text" name="tags" value="">
+                    <br> Multa
+                    <br>
+                    <input id="utiMulta1" type="number" name="multa" value="" required>
+                    <br> Foto (link)
+                    <br>
+                    <input id="utiFoto1" type="text" name="foto" value="" required>
+                    <br> IdBiblio
+                    <br>
+                    <input id="idBiblio1" type="text" name="idBiblio" value="" required>
+
+                    <!--<input type="submit" value="Guardar">-->
+                    <button type="button" id="guardarEditUti">Guardar</button>
+
+                </form>
+            </div>
+            <div id="right">
+                <div id="tblEditUti">
+
+                    <table id="tabelaEditUti" style="width: 100%">
+
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div id="mostrarRegButRem" style="display: none">
+            <div id="left">
+                <h1>REMOVER UTILIZADORES</h1>
+            </div>
+            <div id="right">
+                <div id="tblRemUti">
+
+                    <table id="tabelaRemUti" style="width: 100%">
+
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <div id="livros" style="display:  none">
+
+            <div id="left">
+                <h1>LIVROS</h1>
+
+                <form id="addLivro">
+
+                    <br> Titulo
+                    <br>
+                    <input id="tituloLivro" type="text" name="titulo" value="Codigo Da Vinci" required>
+                    <br> Capa (link)
+                    <br>
+                    <input id="capaLivro" type="text" name="capa" value="..." required>
+                    <br> Descricao Livro
+                    <br>
+                    <textarea rows="4" cols="25" id="descLivro" name="descricao" required></textarea>
+                    <br> Autores
+                    <br>
+                    <input id="autoresLivro" type="text" name="autores" value="Josefina" required>
+                    <br> Data Lancamento
+                    <br>
+                    <input id="dataLivro" type="date" name="dataLancamento" required>
+                    <br> Genero
+                    <br>
+                    <select id="generoLivro">
+                    </select>
+                    <br> Tags
+                    <br>
+                    <textarea rows="4" cols="25" id="tagsLivro" name="descricao" required>#(antes de cada Tag)</textarea>
+                    <br> Editora
+                    <br>
+                    <input id="editoraLivro" type="text" name="editora" value="" required>
+                    <br> N Pag
+                    <br>
+                    <input id="numPagLivro" type="number" name="numPag" value="" required>
+                    <br> Id Biblioteca
+                    <br>
+                    <input id="idBiblio" type="number" name="idBiblio" value="" required>
+                    <br> Estado
+                    <br>
+                    <label>
+                        <input id="estadoBom" type="checkbox" name="bom" value="2">BOM</label>
+                    <label>
+                        <input id="estadoAceitavel" type="checkbox" name="aceitavel" value="1">ACEITAVEL</label>
+                    <label>
+                        <input id="estadoFraco" type="checkbox" name="fraco" value="0">FRACO</label>
+
+                    <input type="submit" value="Submit">
+
+                </form>
+            </div>
+            <div id="right">
+
+                <div id="tblLivro">
+
+                    <table id="tabelaLivro" style="width: 100%">
+
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div id="requisicoes" style="display: none">
+
+            <div id="right">
+
+                <div id="tblRequisicao">
+
+                    <table id="tabelaRequisicao" style="width: 100%">
+
+                    </table>
+
+                </div>
+            </div>
+
+
+        </div>
+
+        <div id="markers" style="display:  none">
+
+            <div id="mapMarkers" style="width:1000px;height:1000px"></div>
+            <div id="tabelaMarkers">
+
+                <table id="tableMarkers" style="width: 100%">
+
+                    
+
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

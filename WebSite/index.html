@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Urban Books - Página inicial</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Custom js -->
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+
+<body>
+
+    <!--BARRA DE NAVEGAÇÃO-->
+    <nav class="navbar navbar-expand-sm">
+        <a class="navbar-brand" style="font-family: SLIM JOE" href="#">
+            <span style="color:#4D3416; ">U</span>RBAN
+            <span style="color:#4D3416">B</span>OOKS</a>
+        <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto" id="menuRight">
+                <!--OPÇÃO SOBRE NOS-->
+                <li class="nav-item">
+                    <a href="#aboutUs" class="nav-link smoothScroll" style="color: white">ABOUT US</a>
+                </li>
+                <!--OPÇÃO CATÁLOGO-->
+                <li class="nav-item">
+                    <a href="#theTeam" class="nav-link smoothScroll" style="color: white">THE TEAM</a>
+                </li>
+                <!--OPÇÃO CATÁLOGO-->
+                <li class="nav-item">
+                    <a href="#whereWeAre" class="nav-link smoothScroll" style="color: white">Where We Are</a>
+                </li>
+                <!--OPÇÃO CATÁLOGO-->
+                <li class="nav-item">
+                    <a id="btnCatalogo" href="html/catalogo.html" class="nav-link smoothScroll" style="font-family: Slim Joe">Catalogo</a>
+                </li>
+                <!--OPÇÃO BACKOFFICE-->
+                <li id="optBackOffice" class="nav-item">
+                    <a class="nav-link smoothScroll" href="html/backOffice.html" id="btnBackOffice" style="font-family: Slim Joe">BackOffice</a>
+                </li>
+                <!--OPÇÃO BACKOFFICE-->
+                <li id="optDoarLivro" class="nav-item">
+                    <a class="nav-link smoothScroll" href="html/doarLivro.html" id="btnDoarLivros" style="font-family: Slim Joe">Doar Livro</a>
+                </li>
+            </ul>
+            <ul id="localImg">
+                    <img id="fotoUser" src="">
+                    <li id="nomeUsuario"></li>
+                    
+            </ul>
+            <div class="dropdown nav-item" id="notiUser">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    <img src="Imagens/notification.png" alt="">
+                </button>
+                <div class="dropdown-menu" id="notificacoes" aria-labelledby="dropdownMenuButton">
+                    <div class="dropdown-item" href="#">
+                        <img  width="50px" height="50px" src="">
+                        <label>Novo Livro</label>
+                    </div>
+                </div>
+            </div>
+
+
+            <ul class="menuContainer">
+
+                <!--OPÇÃO LOGIN-->
+                <li id="optLogin" class="nav-item">
+                    <a data-toggle="modal" data-target="#loginModal" class="nav-link" href="#" id="btnLogin" style="outline: none;">Login</a>
+                </li>
+                <!--OPÇÃO REGISTO-->
+                <li id="optRegister" class="nav-item">
+                    <a data-toggle="modal" data-target="#registoModal" class="nav-link" href="#" id="btnRegisto" style="outline: none;">Registo</a>
+                </li>
+                <!--OPÇÃO LOGOUT-->
+                <li id="optLogout" class="nav-item">
+                    <a class="nav-link" href="#" id="btnLogout">Logout</a>
+                </li>
+            </ul>
+            <form class="form-inline">
+                <div id="input_container">
+                    <input type="text" id="inputSearch" value>
+                    <img src="Imagens/698956-icon-111-search-128.png" id="input_img" href="html/PaginaUtilizador.html">
+                </div>
+            </form>
+        </div>
+    </nav>
+    <br>
+    <div class="modal fade" id="registoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <br>
+                    <h5 class="modal-title" id="exampleModalLabel">Registo</h5>
+                    <br>
+                    <img id="previewImage" src="Imagens/user.png" alt="A Imagem" />
+                    <br>
+                    <form id="formRegisto">
+                        <!--NOME-->
+                        <div class="form-group">
+                            <label for="inputName" class="center letra">Nome</label>
+                            <input required type="text" class="form-control" id="inputName" placeholder="nome">
+                        </div>
+                        <!--EMAIL-->
+                        <div class="form-group">
+                            <label for="inputEmail" class="center letra">E-mail</label>
+                            <input required type="email" class="form-control" id="inputEmail" placeholder="email">
+                        </div>
+
+                        <!--PASSWORD-->
+                        <div class="form-group">
+                            <label for="inputPassword1" class="center letra">Password</label>
+                            <input required minlength="5" type="password" class="form-control" id="inputPassword1" placeholder="password">
+                        </div>
+
+                        <!-- CONFIRMAR PASSWORD-->
+                        <div class="form-group">
+                            <label for="inputPassword2" class="center letra">Confirmar password</label>
+                            <input required minlength="5" type="password" class="form-control" id="inputPassword2" placeholder="password">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputImage" class="center letra">Imagem</label>
+                            <input type="file" class="form-control" id="inputImage" placeholder="Imagem" accept="image/*" name="pic" onchange="readURL(this)">
+                            <br>
+                            <br>
+                            <input type="submit" class="btn btn-primary" value="Registar" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--MODAL PARA AUTENTICAÇÃO-->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <form id="formLogin">
+                        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                        <br>
+                        <img src="Imagens/user.png" alt="imagemLogin" id="imagemLogin">
+                        <br>
+                        <!--EMAIL-->
+                        <div class="form-group">
+                            <label for="inputLoginEmail" class="center letra">E-mail</label>
+                            <input required type="email" class="form-control" id="inputLoginEmail" placeholder="email">
+                        </div>
+
+                        <!--PASSWORD-->
+                        <div class="form-group">
+                            <label for="inputLoginPassword" class="center letra">Password</label>
+                            <input required minlength="5" type="password" class="form-control" id="inputLoginPassword" placeholder="password">
+                            <br>
+                            <br>
+                            <input type="submit" class="btn btn-primary" value="Login" />
+                        </div>
+                        <br>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modalLivro" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="tituloLivro"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="" id="capaLivro">
+                    <p id="descricao"></p>
+                    <p id="autores"></p>
+                    <p id="dataLancamento"></p>
+                    <p id="genero"></p>
+                    <p id="tags"></p>
+                    <p id="editora"></p>
+                    <p id="nPaginas"></p>
+                    <p id="estado"></p>
+                    <p id="idBiblio"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary" id="requisitar">Requisitar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container1" id="inicial">
+        <br>
+        <br>
+        <h1>BEM VINDO AO URBAN BOOKS</h1>
+        <P>plataforma de gestao de bibliotecas </P>
+        <br>
+    </div>
+    <br>
+    <br>
+    <div class="container2">
+        <br>
+        <br>
+        <h1 class="revert">Os mais populares </h1>
+        <p class="revert">os livros que estao no top de requisicoes</p>
+        <br>
+        <div class="container">
+            <div class="row" id="cards2">
+            </div>
+        </div>
+        <br>
+        <br>
+    </div>
+    <br>
+    <br>
+    <div class="container3">
+        <br>
+        <br>
+        <h1 class="revert">Os mais cotados </h1>
+        <p class="revert">os livros que tem o rating mais alto</p>
+        <br>
+        <div class="container">
+            <div class="row" id="cards">
+            </div>
+        </div>
+        <br>
+        <br>
+    </div>
+    <br>
+    <br>
+    <div class="container4" id="aboutUs">
+        <br>
+        <br>
+        <h1 class="revert">ABOUT US</h1>
+        <br>
+        <div class="container">
+                <p class="revert">Este projeto e um sistema de gestao de bibliotecas de rua. Tem como objetivos ir buscar todos os livros de todas
+                        as bibliotecas da zona de Vila do Conde, e mostrar aos utilizadores o catalogo de cada biblioteca registada na
+                        nossa aplicacao. Somos 3 estudantes do curso de Tecnologias de Sistemas de Informacao para a Web, na Escola Superior
+                        de Media Artes e Design. Este projeto foi nos dado no ambito da disciplina Projeto I, e aceitamos com todo o
+                        gosto a proposta dos nossos professores.
+                    </p>
+        </div>
+        
+        <br>
+        <br>
+    </div>
+    <br>
+    <br>
+    <div class="container5" id="theTeam">
+        <br>
+        <br>
+        <h1 class="revert">THE TEAM</h1>
+        <br>
+        <div class="outer">
+            <div class="row fundo">
+                <div class="column col-lg-3">
+                    <div class="card text-center card3">
+                        <img src="Imagens/jose_cunha.jpg" alt="José" style="width:100%" class="roundedImage">
+                        <div class="container">
+                            <br>
+                            <h3 style="font-family: Slim Joe">Jose Cunha</h3>
+                            <p class="title" style="color: white;">CEO &amp; Founder</p>
+                            <p>Main Programmer &amp; Designer</p>
+                            <p>zezecunha4@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column col-lg-3">
+                    <div class="card text-center card3">
+                        <img src="Imagens/carlos_guedes.jpg" alt="Carlos" class="roundedImage" style="width:100%">
+                        <div class="container">
+                            <br>
+                            <h3 style="font-family: Slim Joe">Carlos Guedes</h3>
+                            <p class="title" style="color: white;">CEO &amp; Founder</p>
+                            <p>Main Programmer &amp; Designer</p>
+                            <p>carlosguedespinto@outlook.pt</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column col-lg-3">
+                    <div class="card text-center card3">
+                        <img src="Imagens/jorge_coelho.jpg" alt="jorge" class="roundedImage" style="width:100%">
+                        <div class="container">
+                            <br>
+                            <h3 style="font-family: Slim Joe">Jorge Coelho</h3>
+                            <p class="title" style="color: white;">CEO &amp; Founder</p>
+                            <p>Main Designer &amp; Main Programmer</p>
+                            <p>coelho.jorge11@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+    </div>
+    <br>
+    <br>
+    <div class="container6" id="whereWeAre">
+        <br>
+        <br>
+        <h1 class="revert">Where We Are</h1>
+        <br>
+        <div class="revert" style="text-align: center">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2994.3911652403776!2d-8.739655941771302!3d41.36558542577706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd24441837aa9c2d%3A0x39b9a396dac2269d!2sCampus+2+-+P.Porto+%7C+ESMAD!5e0!3m2!1spt-PT!2spt!4v1528550380908"
+                width="90%" height="300" frameborder="0" style="border:0" allowfullscreen class="mapas"></iframe>
+        </div>
+        <br>
+        <br>
+    </div>
+    <br>
+    <br>
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-column ">
+                    <ul id="faqs">
+                        <li>
+                            <a href="#aboutUs" class="smoothScroll" style="color: white">ABOUT US</a>
+                        </li>
+                        <li>
+                            <a href="#theTeam" class="smoothScroll" style="color: white">THE TEAM</a>
+                        </li>
+                        <li>
+                            <a href="#video" class="smoothScroll" style="color: white">VIDEO</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-column ">
+                    <ul>
+                        <li>SOCIAL</li>
+                        <br>
+                        <a href="https://github.com/CarlosGuedesPinto/Projeto-1-Ano" class="fa fa-github noBlue" style="font-size:36px"></a>
+                        <a href="https://www.facebook.com/carlosguedespinto" class="fa fa-facebook-square noBlue" style="font-size:36px"></a>
+                    </ul>
+                </div>
+
+                <div class="footer-column ">
+                    <ul>
+                        <li>
+                            <a href="contacts.html" class="smoothScroll" style="color: white">CONTACTS</a>
+                        </li>
+                        <li>
+                            <a href="html/TagsUtilizador.html" class="smoothScroll" style="color: white">TAGS UTILIZADOR</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- <div class="footer-column">
+                    <ul>
+                        <img id="fotoUser" src="https://media.nngroup.com/media/people/photos/IMG_2366-copy-400x400.jpg.400x400_q95_autocrop_crop_upscale.jpg">
+                        <li id="nomeUsuario"></li>
+                        <li id="visitarPerfil">Visitar Perfil</li>
+                    </ul>
+                </div> -->
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

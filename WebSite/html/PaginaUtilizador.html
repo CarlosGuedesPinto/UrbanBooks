@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/PaginaUtilizador.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../js/PaginaUtilizador.js"></script>
+  </head>
+  <body>
+      <nav class="navbar navbar-expand-sm">
+          <a class="navbar-brand" style="font-family: SLIM JOE" href="../index.html">
+              <span style="color:#4D3416; ">U</span>RBAN
+              <span style="color:#4D3416">B</span>OOKS</a>
+          <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+              aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavId">
+              <ul class="navbar-nav mr-auto" id="menuRight">
+                  
+                  <!--OPÇÃO CATÁLOGO-->
+                  <li class="nav-item">
+                      <a id="btnCatalogo" href="catalogo.html" class="nav-link smoothScroll" style="font-family: Slim Joe">Catalogo</a>
+                  </li>
+                  <!--OPÇÃO BACKOFFICE-->
+                  <li id="optBackOffice" class="nav-item">
+                      <a class="nav-link smoothScroll" href="backOffice.html" id="btnBackOffice" style="font-family: Slim Joe">BackOffice</a>
+                  </li>
+                  <!--OPÇÃO BACKOFFICE-->
+                  <li id="optDoarLivro" class="nav-item">
+                      <a class="nav-link smoothScroll" href="doarLivro.html" id="btnDoarLivros" style="font-family: Slim Joe">Doar Livro</a>
+                  </li>
+              </ul>
+              <ul id="localImg">
+                      <img id="fotoUser" src="">
+                      <li id="nomeUsuario"></li>
+                      
+              </ul>
+              <div class="dropdown nav-item" id="notiUser">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false">
+                      <img src="../Imagens/notification.png" alt="">
+                  </button>
+                  <div class="dropdown-menu" id="notificacoes" aria-labelledby="dropdownMenuButton">
+                      <div class="dropdown-item" href="#">
+                          <img  width="50px" height="50px" src="">
+                          <label>Novo Livro</label>
+                      </div>
+                  </div>
+              </div>
+  
+  
+              <ul class="menuContainer">
+  
+                  <!--OPÇÃO LOGIN-->
+                  <li id="optLogin" class="nav-item">
+                      <a data-toggle="modal" data-target="#loginModal" class="nav-link" href="#" id="btnLogin" style="outline: none;">Login</a>
+                  </li>
+                  <!--OPÇÃO REGISTO-->
+                  <li id="optRegister" class="nav-item">
+                      <a data-toggle="modal" data-target="#registoModal" class="nav-link" href="#" id="btnRegisto" style="outline: none;">Registo</a>
+                  </li>
+                  <!--OPÇÃO LOGOUT-->
+                  <li id="optLogout" class="nav-item">
+                      <a class="nav-link" href="#" id="btnLogout">Logout</a>
+                  </li>
+              </ul>
+              <form class="form-inline">
+                  <div id="input_container">
+                      <input type="text" id="inputSearch" value>
+                      <img src="../Imagens/698956-icon-111-search-128.png" id="input_img">
+                  </div>
+              </form>
+          </div>
+      </nav>
+      <div class="container">
+        <div id="divUtilizador">
+          
+        </div>
+      </div>
+      <div class="container">
+          <div id="tblRequisicoes">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td scope="row"></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td scope="row"></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+      </div>
+      <br>
+      <br>
+      <br>
+      <div class="container">
+        <div id="divMulta">
+
+        </div>
+      </div>
+      <footer>
+          <div class="footer-container">
+              <div class="footer-main">
+                  <div class="footer-column ">
+                      <ul id="faqs">
+                          <li>
+                              <a href="#aboutUs" class="smoothScroll" style="color: white">ABOUT US</a>
+                          </li>
+                          <li>
+                              <a href="#theTeam" class="smoothScroll" style="color: white">THE TEAM</a>
+                          </li>
+                          <li>
+                              <a href="#video" class="smoothScroll" style="color: white">VIDEO</a>
+                          </li>
+                      </ul>
+                  </div>
+  
+                  <div class="footer-column ">
+                      <ul>
+                          <li>SOCIAL</li>
+                          <br>
+                          <a href="https://github.com/CarlosGuedesPinto/Projeto-1-Ano" class="fa fa-github noBlue" style="font-size:36px"></a>
+                          <a href="https://www.facebook.com/carlosguedespinto" class="fa fa-facebook-square noBlue" style="font-size:36px"></a>
+                      </ul>
+                  </div>
+  
+                  <div class="footer-column ">
+                      <ul>
+                          <li>
+                              <a href="contacts.html" class="smoothScroll" style="color: white">CONTACTS</a>
+                          </li>
+                      </ul>
+                  </div>
+  
+                  <!-- <div class="footer-column">
+                      <ul>
+                          <img id="fotoUser" src="https://media.nngroup.com/media/people/photos/IMG_2366-copy-400x400.jpg.400x400_q95_autocrop_crop_upscale.jpg">
+                          <li id="nomeUsuario"></li>
+                          <li id="visitarPerfil">Visitar Perfil</li>
+                      </ul>
+                  </div> -->
+              </div>
+          </div>
+      </footer>
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

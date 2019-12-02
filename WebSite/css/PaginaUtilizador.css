@@ -1,0 +1,139 @@
+/* NavBar*/
+.navbar-expand-sm {
+    background-color: #D98032;
+    border-color: #D98032;
+    color: white;
+}
+
+.nav-link {
+    color: white;
+}
+
+.navbar-brand {
+    color: white;
+}
+
+.navbar-expand-sm {
+    background-color: #D98032;
+    border-color: #D98032;
+    color: white;
+}
+
+.nav-link {
+    color: white;
+}
+
+.navbar-brand {
+    color: white;
+}
+
+li a:hover {
+    color: lightgray;
+}
+
+a:hover {
+    color: lightgray;
+}
+
+#btnPesquisa {
+    background-color: #814111;
+    color: white;
+    border-color: #814111;
+}
+ul {
+    list-style-type: none;
+}
+li:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+.menuContainer {
+    margin: -10px 0 0 0;
+    outline: none;
+}
+
+.menuContainer li {
+    margin: 0 0 -10px 0;
+    font-family: Slim Joe;
+    outline: none;
+}
+#inputSearch {
+    border-radius: 20px;
+    height: 30px;
+    padding-left: 35px;
+    margin: 0;
+    width: 100%;
+    background: white;
+    outline: none;
+}
+#input_img {
+    position: absolute;
+    bottom: 2px;
+    left: 30px;
+    width: 24px;
+    height: 24px;
+}
+#input_container {
+    position: relative;
+    padding: 0 0 0 20px;
+    width: 200px;
+}
+footer {
+    width: 100%;
+    font-family: Slim Joe;
+}
+
+.footer-container {
+    width: 100%;
+    background-color: #D98032;
+    color: white;
+}
+
+.footer-main {
+    width: 98%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 50px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-main .footer-column {
+    width: calc(100% / 5);
+    text-align: justify;
+}
+
+.footer-main .footer-column li a {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    list-style-type: none;
+}
+.footer-container {
+    position: relative;
+    width: 100%;
+    background-color: #814111;
+    color: white;
+}
+
+.footer-container:after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background: inherit;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    transform-origin: top left;
+}
+#dropdownMenuButton{
+    background: #D98032;
+    border-style: none;
+    outline: none;
+    
+}

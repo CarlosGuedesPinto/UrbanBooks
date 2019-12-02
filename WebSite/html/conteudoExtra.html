@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pagina Conteudo Extra</title>
+
+    <!-- Custom js -->
+    <script src="../js/conteudoExtra.js"></script>
+
+</head>
+
+<body>
+
+    <h1>BACKOFFICE -> URBAN BOOKS PROJECT (EDITAR LIVRO)</h1>
+
+    <div id="containerExtra">
+        <form id='editLivro'>
+            <br>
+            <br>
+            <input id='tituloLivro' type='text' name='titulo' value='Codigo Da Vinci' required>
+            <br> Capa (link)
+            <br>
+            <input id='capaLivro' type='text' name='capa' value='...' required>
+            <br> Descricao Livro
+            <br>
+            <textarea rows='4' cols='25' id='descLivro' name='descricao' required></textarea>
+            <br> Autores
+            <br>
+            <input id='autoresLivro' type='text' name='autores' value='Josefina' required>
+            <br> Data Lancamento
+            <br>
+            <input id='dataLivro' type='date' name='dataLancamento' required>
+            <br> Genero
+            <br>
+            <select id='generoLivro'>
+            </select>
+            <br> Tags
+            <br>
+            <textarea rows='4' cols='25' id='tagsLivro' name='descricao' required>#(antes de cada Tag)</textarea>
+            <br> Editora
+            <br>
+            <input id='editoraLivro' type='text' name='editora' value='' required>
+            <br> N Pag
+            <br>
+            <input id='numPagLivro' type='number' name='numPag' value='' required>
+            <br> Id Biblioteca
+            <br>
+            <input id='idBiblio' type='number' name='idBiblio' value='' required>
+            <br> Estado
+            <br>
+            <label>
+                <input id='estadoBom' type='checkbox' name='bom' value='2'>BOM</label>
+            <label>
+                <input id='estadoAceitavel' type='checkbox' name='aceitavel' value='1'>ACEITAVEL</label>
+            <label>
+                <input id='estadoFraco' type='checkbox' name='fraco' value='0'>FRACO</label>
+
+            <input type='submit' value='Submit'>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>

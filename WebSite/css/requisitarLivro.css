@@ -1,0 +1,222 @@
+.box{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 20px;
+    border-radius: 2px;
+    display: flex;
+    box-sizing: border-box;
+    
+}
+.box .img{
+    width: 150px;
+    flex: 0 0 250px;
+}
+.box .img img{
+    max-width: 250px;
+}
+.box .info {
+    padding-left: 15px;
+    text-align: justify;
+    
+    
+}
+.box .info h2{
+    font-family: Big John;
+    color: #854e24;
+
+}
+#btnRequisitar{
+    font-family: Big John;
+    background: #D98032;
+    border-style: none;
+}
+#btnRequisitar:hover{
+    background: #814111;
+}
+#data{
+    display: block;
+    text-align: right;
+}
+/* NavBar*/
+.navbar-expand-sm {
+    background-color: #D98032;
+    border-color: #D98032;
+    color: white;
+}
+
+.nav-link {
+    color: white;
+}
+
+.navbar-brand {
+    color: white;
+}
+
+.navbar-expand-sm {
+    background-color: #D98032;
+    border-color: #D98032;
+    color: white;
+}
+
+.nav-link {
+    color: white;
+}
+
+.navbar-brand {
+    color: white;
+}
+
+li a:hover {
+    color: lightgray;
+}
+
+a:hover {
+    color: lightgray;
+}
+
+#btnPesquisa {
+    background-color: #814111;
+    color: white;
+    border-color: #814111;
+}
+ul {
+    list-style-type: none;
+}
+li:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+.menuContainer {
+    margin: -10px 0 0 0;
+    outline: none;
+}
+
+.menuContainer li {
+    margin: 0 0 -10px 0;
+    font-family: Slim Joe;
+    outline: none;
+}
+#inputSearch {
+    border-radius: 20px;
+    height: 30px;
+    padding-left: 35px;
+    margin: 0;
+    width: 100%;
+    background: white;
+    outline: none;
+}
+#input_img {
+    position: absolute;
+    bottom: 2px;
+    left: 30px;
+    width: 24px;
+    height: 24px;
+}
+#input_container {
+    position: relative;
+    padding: 0 0 0 20px;
+    width: 200px;
+}
+/**/
+
+.smoothScroll {
+    font-family: Slim Joe;
+    color: inherit;
+    text-decoration:none !important;
+    margin: 24px;
+  }
+  #btnVoltar{
+      padding-left: 18px;
+      padding-right: 18px;
+      background: #D98032;
+      border-style: none;
+  }
+  #left {
+    width: 65%;
+    height: 0px;
+    float: left;
+    
+}
+
+#right {
+    /*ver posicao*/
+    margin-left: 35%;
+    height: 200px;
+    
+}
+.center {
+    display: block;
+    text-align: center;
+    font-family: Slim Joe;
+    color: #814111
+}
+.modal-header {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background-color: #814111;
+    color: white;
+}
+
+.modal-header:after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background: inherit;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    transform-origin: top left;
+    transform: skewY(4deg);
+}
+
+.modal-body {
+    background: khaki;
+    font-family: Slim Joe !important;
+}
+.modal-title {
+    display: block;
+    text-align: center;
+    font-family: Slim Joe;
+}
+.modalBtn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 90px;
+    padding-right: 90px;
+    background: #d98032;
+    border-style: none;
+    font-family: Slim Joe;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+#previewImage{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+} 
+#imagemLogin{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.comentario{
+    position: inherit;
+    margin-top: 425px
+}
+#btnEnviarComent{
+    background-color: #D98032;
+    font-family: Big John;
+    border: none;
+    
+}
+label{
+    font-family: Big John;
+    color: #814111;
+}

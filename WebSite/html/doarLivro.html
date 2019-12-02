@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Urban Books - Doar Livros</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <!-- Custom js -->
+    <script src="../js/doarLivro.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../css/doarLivro.css">
+
+</head>
+
+<body>
+
+    <!--BARRA DE NAVEGAÇÃO-->
+    <nav class="navbar navbar-expand-sm">
+        <a class="navbar-brand" href="../index.html" href="../index.html" style="font-family: SLIM JOE" href="#">
+            <span style="color:#4D3416; ">U</span>RBAN
+            <span style="color:#4D3416">B</span>OOKS</a>
+        <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto" id="menuRight">
+                <!--OPÇÃO CATÁLOGO-->
+                <li class="nav-item">
+                    <a id="catalogo" class="nav-link" href="catalogo.html">Catalogo</a>
+                </li>
+            </ul>
+            <ul class="menuContainer">
+                
+                <!--OPÇÃO LOGOUT-->
+                <li id="optLogout" class="nav-item">
+                    <a class="nav-link" href="../index.html" id="btnLogout">Logout</a>
+                </li>
+            </ul>
+            <form class="form-inline">
+                <div id="input_container">
+                    <input type="text" id="input" value>
+                    <img src="../imagens/698956-icon-111-search-128.png" id="input_img">
+                </div>
+            </form>
+
+        </div>
+    </nav>
+    <br>
+    <div class="modal fade" id="registoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <br>
+                    <h5 class="modal-title" id="exampleModalLabel">Registo</h5>
+                    <br>
+                    <img id="previewImage" src="../imagens/user.png" alt="A Imagem" />
+                    <br>
+                    <form id="formRegisto">
+                        <!--NOME-->
+                        <div class="form-group">
+                            <label for="inputName" class="center">Nome</label>
+                            <input required type="text" class="form-control" id="inputName" placeholder="nome">
+                        </div>
+                        <!--EMAIL-->
+                        <div class="form-group">
+                            <label for="inputEmail" class="center">E-mail</label>
+                            <input required type="email" class="form-control" id="inputEmail" placeholder="email">
+                        </div>
+
+                        <!--PASSWORD-->
+                        <div class="form-group">
+                            <label for="inputPassword1" class="center">Password</label>
+                            <input required minlength="5" type="password" class="form-control" id="inputPassword1" placeholder="password">
+                        </div>
+
+                        <!-- CONFIRMAR PASSWORD-->
+                        <div class="form-group">
+                            <label for="inputPassword2" class="center">Confirmar password</label>
+                            <input required minlength="5" type="password" class="form-control" id="inputPassword2" placeholder="password">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputImage" class="center">Imagem</label>
+                            <input type="file" class="form-control" id="inputImage" placeholder="Imagem" accept="image/*" name="pic" onchange="readURL(this)">
+                            <br>
+                            <br>
+                            <input type="submit" class="btn btn-primary" value="Registar" />
+                        </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--MODAL PARA AUTENTICAÇÃO-->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <form id="formLogin">
+                        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                        <br>
+                        <img src="../imagens/user.png" alt="imagemLogin" id="imagemLogin">
+                        <br>
+                        <!--EMAIL-->
+                        <div class="form-group">
+                            <label for="inputLoginEmail" class="center">E-mail</label>
+                            <input required type="email" class="form-control" id="inputLoginEmail" placeholder="email">
+                        </div>
+
+                        <!--PASSWORD-->
+                        <div class="form-group">
+                            <label for="inputLoginPassword" class="center">Password</label>
+                            <input required minlength="5" type="password" class="form-control" id="inputLoginPassword" placeholder="password">
+                            <br>
+                            <br>
+                            <input type="submit" class="btn btn-primary" value="Login" />
+                        </div>
+                        <br>
+
+
+                </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <div class="container1" id="inicial">
+        <br>
+        <br>
+        <img src="../imagens/hand-holding-up-a-book.png" id="icon" alt="doarImagem">
+        <br>
+        <h1>DOAR LIVROS</h1>
+        <h6>Tao facil assim?!? </h6>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+
+        <div id="formAddLivro" onresize="resizeDiv()">
+
+            <form id="addLivro" class="container">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm">
+                            <label for="tituloLivro" class="correct">Titulo</label>
+                            <input class="form-control" id="tituloLivro" type="text" name="titulo" value="Codigo Da Vinci" required>
+                        </div>
+                        <div class="col-sm">
+                            <label for="autoresLivro" class="correct">Autores</label>
+                            <input class="form-control" id="autoresLivro" type="text" name="autores" value="Josefina" required>
+                        </div>
+                        <div class="col-sm">
+                            <label for="dataLivro" class="correct">Data de Lancamento</label>
+                            <input class="form-control" id="dataLivro"  type="date" name="dataLancamento" required>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm">
+                            <label for="descLivro" class="correct">Descricao Livro</label>
+                            <textarea class="form-control" rows="4" cols="25" id="descLivro" name="descricao" required></textarea>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm">
+                            <label for="editoraLivro" class="correct">Editora</label>
+                            <input class="form-control" id="editoraLivro" type="text" name="editora" value="" required>
+                        </div>
+                        <div class="col-sm">
+                            <label for="generoLivro" class="correct">Genero</label>
+                            <select id="generoLivro" class="form-control"></select>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div id="tagsLivro" class="col-sm">
+                            <label class="correct">Tags</label>
+                            
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm">
+                            <label for="numPagLivro" class="correct">N Pag</label>
+                            <input class="form-control" id="numPagLivro" type="number" min="1" name="numPag" required>
+                        </div>
+                        <div class="col-sm">
+                            <label for="moradasBiblio" class="correct">Biblioteca Destino</label>
+                            <select id="moradasBiblio" class="form-control" ></select>
+                        </div>
+                    </div>
+                    <br>
+                    <p class="correct">Estado do Livro</p>
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-input">Bom</label>
+                        <input id="estadoBom" type="radio" name="radio" value="2">
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-input"> Aceitavel</label>
+                        <input id="estadoAceitavel" type="radio" name="radio" value="1">
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-input">Fraco</label>
+                        <input id="estadoFraco" type="radio" name="radio" value="0">
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div id="row">
+                    <div class="col-sm">
+                        <label for="inputLink" class="correct">Capa(Link)</label>
+                        <input class="form-control" id="inputLink" type="link">
+                    </div>
+                </div>
+                <br>
+                <br>
+                    <input type="submit" value="Submit" class="btn btn-primary">
+            </form>
+
+
+        </div>
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-column ">
+                    <ul id="faqs">
+                        <li>
+                            <a href="#aboutUs" class="smoothScroll" style="color: white">ABOUT US</a>
+                        </li>
+                        <li>
+                            <a href="#theTeam" class="smoothScroll" style="color: white">THE TEAM</a>
+                        </li>
+                        <li>
+                            <a href="#video" class="smoothScroll" style="color: white">VIDEO</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-column ">
+                    <ul>
+                        <li>SOCIAL</li>
+                        <br>
+                        <a href="https://github.com/CarlosGuedesPinto/Projeto-1-Ano" class="fa fa-github noBlue" style="font-size:36px"></a>
+                        <a href="https://github.com/CarlosGuedesPinto/Projeto-1-Ano" class="fa fa-google-plus noBlue" style="font-size:36px"></a>
+                        <a href="https://github.com/CarlosGuedesPinto/Projeto-1-Ano" class="fa fa-facebook-square noBlue" style="font-size:36px"></a>
+                    </ul>
+                </div>
+
+                <div class="footer-column ">
+                    <ul>
+                        <li>
+                            <a href="contacts.html" class="smoothScroll" style="color: white">CONTACTS</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-column ">
+                    <ul>
+                        <li>WHERE WE ARE</li>
+                        <br>
+                        <div>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2994.3911652403776!2d-8.739655941771302!3d41.36558542577706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd24441837aa9c2d%3A0x39b9a396dac2269d!2sCampus+2+-+P.Porto+%7C+ESMAD!5e0!3m2!1spt-PT!2spt!4v1528550380908"
+                                width="300" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div>
+                    </ul>
+                </div>
+
+                <!-- <div class="footer-column">
+                    <ul>
+                        <img id="fotoUser" src="https://media.nngroup.com/media/people/photos/IMG_2366-copy-400x400.jpg.400x400_q95_autocrop_crop_upscale.jpg">
+                        <li id="nomeUsuario"></li>
+                        <li id="visitarPerfil">Visitar Perfil</li>
+                    </ul>
+                </div> -->
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

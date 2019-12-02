@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Urban Books - Requisitar</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/requisitarLivro.css">
+
+    <script src="../js/requisitarLivro.js"></script>
+</head>
+
+<body>
+    <!--BARRA DE NAVEGAÇÃO-->
+    <nav class="navbar navbar-expand-sm">
+        <a class="navbar-brand" href="../index.html" style="font-family: SLIM JOE" href="#">
+            <span style="color:#4D3416; ">U</span>RBAN
+            <span style="color:#4D3416">B</span>OOKS</a>
+        <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto" id="menuRight">
+                <!--OPÇÃO CATÁLOGO-->
+                <li class="nav-item">
+                    <a id="btnCatalogo" href="catalogo.html" class="nav-link smoothScroll" style="font-family: Slim Joe">Catalogo</a>
+                </li>
+                <!--OPÇÃO BACKOFFICE-->
+                <li id="optBackOffice" class="nav-item">
+                    <a class="nav-link smoothScroll" href="backOffice.html" id="btnBackOffice" style="font-family: Slim Joe">BackOffice</a>
+                </li>
+                <!--OPÇÃO BACKOFFICE-->
+                <li id="optDoarLivro" class="nav-item">
+                    <a class="nav-link smoothScroll" href="doarLivros.html" id="btnDoarLivros" style="font-family: Slim Joe">Doar Livro</a>
+                </li>
+            </ul>
+            <ul class="menuContainer">
+                <!--OPÇÃO LOGIN-->
+                <li id="optLogin" class="nav-item">
+                    <a data-toggle="modal" data-target="#loginModal" class="nav-link" href="#" id="btnLogin" style="outline: none;">Login</a>
+                </li>
+                <!--OPÇÃO REGISTO-->
+                <li id="optRegister" class="nav-item">
+                    <a data-toggle="modal" data-target="#registoModal" class="nav-link" href="#" id="btnRegisto" style="outline: none;">Registo</a>
+                </li>
+                <!--OPÇÃO LOGOUT-->
+                <li id="optLogout" class="nav-item">
+                    <a class="nav-link" href="#" id="btnLogout">Logout</a>
+                </li>
+            </ul>
+            <form class="form-inline">
+                <div id="input_container">
+                    <input type="text" id="inputSearch" value>
+                    <img src="../imagens/698956-icon-111-search-128.png" id="input_img">
+                </div>
+            </form>
+        </div>
+    </nav>
+    <!-- modal Sign-up -->
+    <div class="modal fade" id="registoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <br>
+                    <h5 class="modal-title" id="exampleModalLabel">Registo</h5>
+                    <br>
+                    <img id="previewImage" src="../imagens/user.png" alt="A Imagem" />
+                    <br>
+                    <form id="formRegisto">
+                        <!--NOME-->
+                        <div class="form-group">
+                            <label for="inputName" class="center letra">Nome</label>
+                            <input required type="text" class="form-control" id="inputName" placeholder="nome">
+                        </div>
+                        <!--EMAIL-->
+                        <div class="form-group">
+                            <label for="inputEmail" class="center letra">E-mail</label>
+                            <input required type="email" class="form-control" id="inputEmail" placeholder="email">
+                        </div>
+
+                        <!--PASSWORD-->
+                        <div class="form-group">
+                            <label for="inputPassword1" class="center letra">Password</label>
+                            <input required minlength="5" type="password" class="form-control" id="inputPassword1" placeholder="password">
+                        </div>
+
+                        <!-- CONFIRMAR PASSWORD-->
+                        <div class="form-group">
+                            <label for="inputPassword2" class="center letra">Confirmar password</label>
+                            <input required minlength="5" type="password" class="form-control" id="inputPassword2" placeholder="password">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputImage" class="center letra">Imagem</label>
+                            <input type="file" class="form-control" id="inputImage" placeholder="Imagem" accept="image/*" name="pic" onchange="readURL(this)">
+                            <br>
+                            <br>
+                            <input type="submit" class="btn btn-primary modalBtn" value="Registar" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal Login -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <form id="formLogin">
+                        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                        <br>
+                        <img src="../imagens/user.png" alt="imagemLogin" id="imagemLogin">
+                        <br>
+                        <!--EMAIL-->
+                        <div class="form-group">
+                            <label for="inputLoginEmail" class="center letra">E-mail</label>
+                            <input required type="email" class="form-control" id="inputLoginEmail" placeholder="email">
+                        </div>
+
+                        <!--PASSWORD-->
+                        <div class="form-group">
+                            <label for="inputLoginPassword" class="center letra">Password</label>
+                            <input required minlength="5" type="password" class="form-control" id="inputLoginPassword" placeholder="password">
+                            <br>
+                            <br>
+                            <input type="submit" class="btn btn-primary modalBtn" value="Login" />
+                        </div>
+                        <br>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- container para o livro -->
+
+    <div class="box" id="left">
+        <div class="img">
+            <img id="imgSrc" src="https://images.livrariasaraiva.com.br/imagemnet/imagem.aspx/?pro_id=9871633&qld=90&l=430&a=-1" alt="">
+        </div>
+        <div class="info">
+            <h2 id="titulo">O diario de um Banana</h2>
+            <div class="row">
+                <div class="col-sm-6">
+                    <b id="generoLivro">Aventura</b>
+                </div>
+                <div class="col-sm-6">
+                    <b id="data">24-03-2016</b>
+                </div>
+            </div>
+
+            <br>
+
+            <p id="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam asperiores omnis in nihil pariatur recusandae modi
+                autem a, laboriosam facilis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora perferendis
+                odio unde, quis obcaecati, dolorem molestias ullam eveniet delectus at et provident, totam repudiandae tenetur
+                quam. Enim, cum! Deserunt, quia?</p>
+            <p>
+                <b>Estado do Livro:</b>
+                <a id="estado"> Bom</a>
+            </p>
+            <p>
+                <b>Tags:</b>
+                <a id="tags">#banana</a>
+            </p>
+            <p>
+                <b>Biblioteca:</b>
+                <a id="biblioLivro">#banana</a>
+            </p>
+            <button type="button" id="btnRequisitar" value="" class="btn btn-primary"> Requisitar </button>
+
+        </div>
+        
+
+
+    </div>
+    <div class="container">
+        <div class="comentario">
+            <div class="form-group">
+                <label for="#comentuti">Comente</label>
+                <textarea class="form-control" name="" id="comentuti" rows="4"></textarea> 
+                <br>
+                Rating:
+                <input type="text" id="rating"></input>
+                <button type="button" id="btnEnviarComent" value="" class="btn btn-primary"> Enviar </button>
+            </div>
+
+        </div>
+    </div>
+        
+    <div class="coments" id="right">
+
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

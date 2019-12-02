@@ -1,0 +1,497 @@
+.navbar-expand-sm {
+    background-color: #D98032;
+    border-color: #D98032;
+    color: white;
+}
+
+.nav-link {
+    color: white;
+}
+
+.navbar-brand {
+    color: white;
+}
+
+.nav-link {
+    color: white;
+}
+
+.navbar-brand {
+    color: white;
+}
+
+li a:hover {
+    color: lightgray;
+}
+
+a:hover {
+    color: lightgray;
+}
+
+#btnPesquisa {
+    background-color: #814111;
+    color: white;
+    border-color: #814111;
+}
+
+h1 {
+    text-align: center;
+    font-family: Slim Joe;
+}
+
+p {
+    text-align: center;
+    font-family: Big John;
+    color: #814111;
+}
+
+#inicial {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: #814111;
+    color: white;
+}
+
+#inicial:after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background: inherit;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    transform-origin: top left;
+    transform: skewY(2deg);
+}
+
+.container2 {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: #fdd689;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: skewY(2deg);
+    color: black
+}
+
+.container3 {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: #814111;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: skewY(2deg);
+    color: white
+}
+
+.container4 {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: #fdd689;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: skewY(2deg);
+    color: black
+}
+
+.container5 {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: #814111;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: skewY(2deg);
+    color: white
+}
+.container6 {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: #fdd689;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: skewY(2deg);
+    color: black
+}
+
+.revert {
+    transform: skewY(-2deg);
+}
+
+body {
+    background-color: white;
+}
+
+footer {
+    width: 100%;
+    font-family: Slim Joe;
+}
+
+.footer-container {
+    width: 100%;
+    background-color: #D98032;
+    color: white;
+}
+
+.footer-main {
+    width: 98%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 50px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-main .footer-column {
+    width: calc(100% / 5);
+    text-align: justify;
+}
+
+.footer-main .footer-column li a {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.row {
+    background: white;
+    
+    text-align: center;
+}
+
+li:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.footer-container {
+    position: relative;
+    width: 100%;
+    background-color: #814111;
+    color: white;
+}
+
+.footer-container:after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background: inherit;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    transform-origin: top left;
+}
+
+#input_container {
+    position: relative;
+    padding: 0 0 0 20px;
+    width: 200px;
+}
+
+#inputSearch {
+    border-radius: 20px;
+    height: 30px;
+    padding-left: 35px;
+    margin: 0;
+    width: 100%;
+    background: white;
+    outline: none;
+}
+
+#input_img {
+    position: absolute;
+    bottom: 2px;
+    left: 30px;
+    width: 24px;
+    height: 24px;
+}
+
+.menuContainer {
+    margin: -10px 0 0 0;
+    outline: none;
+}
+
+.menuContainer li {
+    margin: 0 0 -10px 0;
+    font-family: Slim Joe;
+    outline: none;
+}
+
+.modal-header {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background-color: #814111;
+    color: white;
+}
+
+.modal-header:after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background: inherit;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    transform-origin: top left;
+    transform: skewY(4deg);
+}
+
+.modal-body {
+    background: khaki;
+    font-family: Slim Joe !important;
+}
+
+#fotoUser {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+}
+
+input[type=file] {
+    padding: 10px;
+}
+
+#previewImage {
+    padding: 10px;
+    min-height: 200px;
+    max-height: 200px;
+    min-width: 200px;
+    max-width: 200px;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.class {
+    max-width: 150px;
+    min-width: 150px;
+    max-height: 150px;
+    min-height: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+}
+
+.textWithBlurredBg {
+    width: auto;
+    height: auto;
+    max-width: 195px;
+    display: inline-block;
+    transition: .3s;
+    font-family: Slim Joe;
+}
+
+.textWithBlurredBg img {
+    width: 100%;
+    height: 100%;
+    transition: .3s;
+    border-radius: 4px;
+}
+
+.textWithBlurredBg:hover img {
+    filter: blur(2px) brightness(60%);
+    box-shadow: 0 0 16px cyan;
+}
+
+.textWithBlurredBg :not(img) {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    transition: .3s;
+}
+
+.textWithBlurredBg h2 {
+    top: 25%
+}
+
+.textWithBlurredBg h1 {
+    top: 40%
+}
+
+.textWithBlurredBg:hover :not(img) {
+    opacity: 1;
+}
+
+#cards {
+    background-color: #fdd689;
+    text-align: center;
+}
+
+#icon {
+    transform: skewY(-1deg);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.modal-title {
+    display: block;
+    text-align: center;
+    font-family: Big John;
+}
+
+.center {
+    display: block;
+    text-align: center;
+    font-family: Big John;
+    color: #814111
+}
+
+#imagemLogin {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-primary {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #d98032;
+    border-style: none;
+    font-family: Big John;
+}
+
+.btn-primary:hover {
+    background: #814111;
+}
+
+/* Three columns side by side */
+
+.column {
+    float: left;
+    width: 33.3%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+    color: black;
+}
+
+/* Display the columns below each other instead of side by side on small screens */
+
+@media screen and (max-width: 650px) {
+    .column {
+        width: 100%;
+        display: block;
+    }
+}
+
+/* Add some shadows to create a card effect */
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Some left and right padding inside the container */
+
+.container {
+    padding: 0 16px;
+}
+
+/* Clear floats */
+
+.container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.title {
+    color: grey;
+}
+
+.fundo {
+    background: #814111;
+}
+
+.card3 {
+    width: auto;
+    height: auto;
+    max-width:325px;
+    max-height:500px;
+}
+.outer {
+    margin-left: 22.5%;
+}
+.modal-title{
+    font-family: Slim Joe;
+}
+.letra {
+    font-family: Slim Joe;
+}
+.smoothScroll {
+    font-family: Slim Joe;
+    color: inherit;
+    text-decoration:none !important;
+    margin: 24px;
+  }
+  .noBlue {
+    color: inherit;
+    text-decoration:none !important;
+  }
+  .card3 {
+    background: #814111;
+    border: #814111;
+    box-shadow: 0px 0px;
+    color: white;
+  }
+  .roundedImage {
+    border-radius: 50%;
+  }
+  #menuRight {
+    height: 50px;
+    margin: -40px 0 0 0;
+  }
+  b{
+      display: block;
+      font-family: Slim Joe;
+      text-align: center;
+  }
+  #dropdownMenuButton{
+    background: #D98032;
+    border-style: none;
+    outline: none;
+    
+}
+#fotoUser {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-top: 20px
+    
+    
+}
+
+  
+  

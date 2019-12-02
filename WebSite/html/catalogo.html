@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Urban Books - Catálogo</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/catalogo.css">
+    <script src="../js/catalogo.js"></script>
+</head>
+
+<body>
+        <div class="modal fade" id="registoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <br>
+                            <h5 class="modal-title" id="exampleModalLabel">Registo</h5>
+                            <br>
+                            <img id="previewImage" src="../imagens/user.png" alt="A Imagem" />
+                            <br>
+                            <form id="formRegisto">
+                                <!--NOME-->
+                                <div class="form-group">
+                                    <label for="inputName" class="center letra">Nome</label>
+                                    <input required type="text" class="form-control" id="inputName" placeholder="nome">
+                                </div>
+                                <!--EMAIL-->
+                                <div class="form-group">
+                                    <label for="inputEmail" class="center letra">E-mail</label>
+                                    <input required type="email" class="form-control" id="inputEmail" placeholder="email">
+                                </div>
+        
+                                <!--PASSWORD-->
+                                <div class="form-group">
+                                    <label for="inputPassword1" class="center letra">Password</label>
+                                    <input required minlength="5" type="password" class="form-control" id="inputPassword1" placeholder="password">
+                                </div>
+        
+                                <!-- CONFIRMAR PASSWORD-->
+                                <div class="form-group">
+                                    <label for="inputPassword2" class="center letra">Confirmar password</label>
+                                    <input required minlength="5" type="password" class="form-control" id="inputPassword2" placeholder="password">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputImage" class="center letra">Imagem</label>
+                                    <input type="file" class="form-control" id="inputImage" placeholder="Imagem" accept="image/*" name="pic" onchange="readURL(this)">
+                                    <br>
+                                    <br>
+                                    <input type="submit" class="btn btn-primary modalBtn" value="Registar" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!--MODAL PARA AUTENTICAÇÃO-->
+            <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+        
+                        <div class="modal-body">
+                            <form id="formLogin">
+                                <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                                <br>
+                                <img src="../imagens/user.png" alt="imagemLogin" id="imagemLogin">
+                                <br>
+                                <!--EMAIL-->
+                                <div class="form-group">
+                                    <label for="inputLoginEmail" class="center letra">E-mail</label>
+                                    <input required type="email" class="form-control" id="inputLoginEmail" placeholder="email">
+                                </div>
+        
+                                <!--PASSWORD-->
+                                <div class="form-group">
+                                    <label for="inputLoginPassword" class="center letra">Password</label>
+                                    <input required minlength="5" type="password" class="form-control" id="inputLoginPassword" placeholder="password">
+                                    <br>
+                                    <br>
+                                    <input type="submit" class="btn btn-primary modalBtn" value="Login" />
+                                </div>
+                                <br>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <nav class="navbar navbar-expand-sm">
+                <a class="navbar-brand" style="font-family: SLIM JOE" href="../index.html" id="home">
+                    <span style="color:#4D3416; ">U</span>RBAN
+                    <span style="color:#4D3416">B</span>OOKS</a>
+                <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul class="navbar-nav mr-auto" id="menuRight">
+                        <!--OPÇÃO BACKOFFICE-->
+                        <li id="optBackOffice" class="nav-item">
+                            <a class="nav-link smoothScroll" href="backOffice.html" id="btnBackOffice" style="font-family: Slim Joe">BackOffice</a>
+                        </li>
+                        <!--OPÇÃO BACKOFFICE-->
+                        <li id="optDoarLivro" class="nav-item">
+                            <a class="nav-link smoothScroll" href="doarLivros.html" id="btnDoarLivros" style="font-family: Slim Joe">Doar Livro</a>
+                        </li>
+                    </ul>
+                    <ul id="localImg">
+                            <img id="fotoUser" src="https://media.nngroup.com/media/people/photos/IMG_2366-copy-400x400.jpg.400x400_q95_autocrop_crop_upscale.jpg">
+                            <li id="nomeUsuario"></li>
+                            
+                    </ul>
+                    <div class="dropdown nav-item">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <img src="../imagens/notification.png"  alt="">
+                        </button>
+                        <div class="dropdown-menu" id="notificacoes" aria-labelledby="dropdownMenuButton">
+                            <div class="dropdown-item" href="#">
+                                <img  width="50px" height="50px" src="">
+                                <label>Novo Livro</label>
+                            </div>
+                        </div>
+                    </div>
+        
+        
+                    <ul class="menuContainer">
+        
+                        <!--OPÇÃO LOGIN-->
+                        <li id="optLogin" class="nav-item">
+                            <a data-toggle="modal" data-target="#loginModal" class="nav-link" href="#" id="btnLogin" style="outline: none;">Login</a>
+                        </li>
+                        <!--OPÇÃO REGISTO-->
+                        <li id="optRegister" class="nav-item">
+                            <a data-toggle="modal" data-target="#registoModal" class="nav-link" href="#" id="btnRegisto" style="outline: none;">Registo</a>
+                        </li>
+                        <!--OPÇÃO LOGOUT-->
+                        <li id="optLogout" class="nav-item">
+                            <a class="nav-link" href="#" id="btnLogout">Logout</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline">
+                        <div id="input_container">
+                            <input type="text" id="inputSearch" value>
+                            <img src="../Imagens/698956-icon-111-search-128.png" id="input_img">
+                        </div>
+                    </form>
+                </div>
+            </nav>
+            <br>
+
+    <div id="inicial">
+        <br>
+        <img id="icon" src="../imagens/book.png" alt="icon">
+        <br>
+        <h1 class="revert">Catalogo</h1>
+        <p class="revert">Encontre o seu livro pretendido</p>
+
+    </div>
+    <br>
+    <br>
+
+
+    <p>
+        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Filtros
+        </a>
+    </p>
+    <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+            <div class="row">
+                <div class="col-sm">
+                    <label for="#generoLivro">Categorias</label>
+                    <select class="form-control" id="generoLivro">
+                        <option value="" hidden selected>Escolha um genero</option>
+                    </select>
+                </div>
+                <div class="col-sm">
+                    <label for="#exampleFormControlSelect1">Tags</label>
+                    <select class="form-control" id="tagsLivro">
+                        <option value="" hidden selected>Escolha uma tag</option>
+                    </select>
+                </div>
+                <div class="col-sm">
+                    <label for="#exampleFormControlSelect1">Estado do Livro</label>
+                    <select class="form-control" id="estadoLivro">
+                        <option value="" hidden selected>Escolha o Estado do Livro</option>
+                        <option value="2">Bom</option>
+                        <option value="1">Aceitavel</option>
+                        <option value="0">Fraco</option>
+
+                    </select>
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm">
+                    <a name="" class="btn btn-primary text-white" role="button" id="btnFiltrar">Filtrar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+        <div class="text-center">
+            <button type="button" class="btn btn-primary" id="paginaSeguinte">Anterior</button>
+            <button type="button" class="btn btn-primary" id="paginaAnterior">Seguinte</button>
+
+        </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <footer>
+            <div class="footer-container">
+                <div class="footer-main">
+                    <div class="footer-column ">
+                        <ul id="faqs">
+                            <li>
+                                <a href="#aboutUs" class="smoothScroll" style="color: white">ABOUT US</a>
+                            </li>
+                            <li>
+                                <a href="#theTeam" class="smoothScroll" style="color: white">THE TEAM</a>
+                            </li>
+                            <li>
+                                <a href="#video" class="smoothScroll" style="color: white">VIDEO</a>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <div class="footer-column ">
+                        <ul>
+                            <li>SOCIAL</li>
+                            <br>
+                            <a href="https://github.com/CarlosGuedesPinto/Projeto-1-Ano" class="fa fa-github noBlue" style="font-size:36px"></a>
+                            <a href="https://github.com/CarlosGuedesPinto/Projeto-1-Ano" class="fa fa-google-plus noBlue" style="font-size:36px"></a>
+                            <a href="https://github.com/CarlosGuedesPinto/Projeto-1-Ano" class="fa fa-facebook-square noBlue" style="font-size:36px"></a>
+                        </ul>
+                    </div>
+    
+                    <div class="footer-column ">
+                        <ul>
+                            <li>
+                                <a href="contacts.html" class="smoothScroll" style="color: white">CONTACTS</a>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <div class="footer-column ">
+                        <ul>
+                            <li>WHERE WE ARE</li>
+                            <br>
+                            <div>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2994.3911652403776!2d-8.739655941771302!3d41.36558542577706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd24441837aa9c2d%3A0x39b9a396dac2269d!2sCampus+2+-+P.Porto+%7C+ESMAD!5e0!3m2!1spt-PT!2spt!4v1528550380908"
+                                    width="300" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            </div>
+                        </ul>
+                    </div>
+    
+                    <!-- <div class="footer-column">
+                        <ul>
+                            <img id="fotoUser" src="https://media.nngroup.com/media/people/photos/IMG_2366-copy-400x400.jpg.400x400_q95_autocrop_crop_upscale.jpg">
+                            <li id="nomeUsuario"></li>
+                            <li id="visitarPerfil">Visitar Perfil</li>
+                        </ul>
+                    </div> -->
+                </div>
+            </div>
+        </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
