@@ -9,4 +9,4 @@ This repository contains the source code (in the src folder), the Poster, the fi
 
 * **José Cunha** - [CunhaaS](https://github.com/CunhaaS)
 
-* **Jorge Coelho** - 
+* **Jorge Coelho** - [ItsJCoelho](https://github.com/ItsJCoelho)
