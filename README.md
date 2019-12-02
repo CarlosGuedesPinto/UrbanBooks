@@ -1,2 +1,10 @@
-# UrbanBooks
-Website developed in the 1ºst year of the course. Small introduction to LocalStorage.
+# <p align="center"><img src="https://i.imgur.com/dcoq1SR.jpg" alt="Urban Books logo" width="500"></p>
+This project is a web application developed during the 1ºst year in the [Web Information Systems and Technologies](https://www.esmad.ipp.pt/courses/degree/400001419) course at [ESMAD](https://www.esmad.ipp.pt/).
+
+#### Authors
+
+* **Carlos Guedes** - [CarlosGuedesPinto](https://github.com/CarlosGuedesPinto)
+
+* **José Cunha** - [CunhaaS](https://github.com/CunhaaS)
+
+* **Jorge Coelho** - 
